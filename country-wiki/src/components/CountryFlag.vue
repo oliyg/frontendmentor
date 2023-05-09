@@ -10,7 +10,7 @@ const { data } = props
 
 <template>
     <div class="country-flag-container">
-        <img class="flag-img" :src="data.flags.svg" :alt="data.name + 'flag'">
+        <div class="flag-img" :style="{ backgroundImage: `url(${data.flags.svg})` }"></div>
         <div class="country-desc">
             <p class="country-name">{{ data.name }}</p>
             <div class="country-info">
@@ -68,11 +68,19 @@ const { data } = props
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     background-color: var(--color-background-color);
+    overflow: hidden;
+    cursor: pointer;
 
     .flag-img {
         display: block;
         height: var(--flag-img-height);
         width: 100%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: var(--border-radius);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     .country-desc {

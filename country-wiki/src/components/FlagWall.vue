@@ -19,7 +19,6 @@ const filteredDb = computed(() => dbStore.filteredDb)
         --row-gap: 40px;
 
         grid-template-columns: 1fr;
-        row-gap: var(--row-gap);
         width: min-content;
         margin: 0 auto;
     }
@@ -29,14 +28,16 @@ const filteredDb = computed(() => dbStore.filteredDb)
     .wall-container {
         --margin-top: 48px;
         --row-gap: 40px;
+        --column-gap: 70px;
 
         grid-template-columns: repeat(4, 1fr);
-        row-gap: var(--row-gap);
+        column-gap: var(--column-gap);
     }
 }
 
 .wall-container {
     margin-top: var(--margin-top);
+    row-gap: var(--row-gap);
     display: grid;
 }
 </style>
