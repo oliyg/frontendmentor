@@ -1,20 +1,23 @@
 <script setup>
 import SearchBar from "@/components/SearchBar.vue";
 import DropDown from '@/components/DropDown.vue'
+import { useDbStore } from "@/stores/home";
+import { computed } from "vue";
+const dbStore = useDbStore()
+const regions = computed(() => dbStore.regions)
 
 const onSelect = itm => {
-    console.log("🚀 ~ file: HomeView.vue:5 ~ onSelect ~ itm:", itm)
+    dbStore.setSelectedRegion(itm.name)
 }
 const onChange = kw => {
-    console.log("🚀 ~ file: HomeView.vue:9 ~ onChange ~ kw:", kw)
+    dbStore.setKw(kw)
 }
 </script>
 
 <template>
     <div class="tools">
         <SearchBar class="search-bar" @change="onChange" />
-        <DropDown class="filter-menu" :options="[{ name: 'Africa' }, { name: 'US' }, { name: 'China' }]"
-            @select="onSelect" />
+        <DropDown class="filter-menu" :options="regions" @select="onSelect" />
     </div>
 </template>
 

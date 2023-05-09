@@ -1,12 +1,14 @@
 <script setup>
+import { useDbStore } from '@/stores/home';
+import { computed } from 'vue';
 import CountryFlag from './CountryFlag.vue';
+const dbStore = useDbStore()
+const filteredDb = computed(() => dbStore.filteredDb)
 </script>
 
 <template>
     <div class="wall-container">
-        <CountryFlag />
-        <CountryFlag />
-        <CountryFlag />
+        <CountryFlag v-for="(country, idx) in filteredDb" :key="country.name" :data="country" />
     </div>
 </template>
 

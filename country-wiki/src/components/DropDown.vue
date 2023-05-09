@@ -31,6 +31,7 @@ const emits = defineEmits({
 /* ----------------------------- selectedOption ---------------------------- */
 const selected = ref(null);
 const onSelect = (itm) => {
+    kw.value = itm.name
     selected.value = itm
     emits("select", itm)
     onToggleShowList()
@@ -123,6 +124,7 @@ const onSelect = (itm) => {
         background: var(--color-background);
         box-shadow: var(--box-shadow);
         border-radius: var(--border-radius);
+        z-index: 2;
 
         .itm {
             font-size: var(--itm-font-size);

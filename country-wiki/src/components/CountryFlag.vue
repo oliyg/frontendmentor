@@ -1,23 +1,29 @@
 <script setup>
-import ExampleFlag from '@/assets/exampleFlag.png'
+const props = defineProps({
+    data: {
+        type: Object,
+        required: true,
+    }
+})
+const { data } = props
 </script>
 
 <template>
     <div class="country-flag-container">
-        <img class="flag-img" :src="ExampleFlag" alt="">
+        <img class="flag-img" :src="data.flags.svg" :alt="data.name + 'flag'">
         <div class="country-desc">
-            <p class="country-name">Germany</p>
+            <p class="country-name">{{ data.name }}</p>
             <div class="country-info">
                 <span class="country-info-title">Population: </span>
-                <span class="country-info-val">81,770,900</span>
+                <span class="country-info-val">{{ data.population }}</span>
             </div>
             <div class="country-info">
                 <span class="country-info-title">Region: </span>
-                <span class="country-info-val">Europe</span>
+                <span class="country-info-val">{{ data.region }}</span>
             </div>
             <div class="country-info">
                 <span class="country-info-title">Capital: </span>
-                <span class="country-info-val">Berlin</span>
+                <span class="country-info-val">{{ data.capital }}</span>
             </div>
         </div>
     </div>
