@@ -1,7 +1,7 @@
 <script setup>
-import SearchBar from "@/components/SearchBar.vue";
+import MainTools from "@/components/MainTools.vue";
 </script>
 
 <template>
-  <SearchBar />
+  <MainTools />
 </template>

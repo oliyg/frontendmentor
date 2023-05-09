@@ -24,14 +24,12 @@ import toggleImg from "@/assets/toggle.svg";
     align-items: center;
     padding: 30px 16px;
 
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+    box-shadow: var(--box-shadow);
     font-size: 0;
-    font-family: 'Nunito Sans';
-    font-style: normal;
 
     .title {
         font-weight: 800;
-        font-size: 14px;
+        font-size: var(--font-size);
     }
 
     .theme-toggle {
@@ -45,7 +43,6 @@ import toggleImg from "@/assets/toggle.svg";
         }
 
         .txt {
-            font-style: normal;
             vertical-align: middle;
             font-weight: 600;
             font-size: 12px;

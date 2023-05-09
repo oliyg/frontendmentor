@@ -23,8 +23,8 @@ import MainHeader from './components/MainHeader.vue';
 @media screen and (min-width: 1440px) {
   .page-container {
     top: 80px;
-    margin: 48px 80px;
-    max-width: 1200px;
+    margin: 48px auto;
+    max-width: 1280px;
   }
 }
 </style>
