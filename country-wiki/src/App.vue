@@ -7,8 +7,10 @@ dbStore.queryAllData()
 
 <template>
   <MainHeader />
-  <KeepAlive include="HomeView, DetailView">
-    <RouterView />
-  </KeepAlive>
+  <RouterView v-slot="{ Component }">
+    <KeepAlive include="HomeView, DetailView">
+      <component :is="Component"></component>
+    </KeepAlive>
+  </RouterView>
 </template>
 
