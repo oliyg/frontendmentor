@@ -1,4 +1,6 @@
 <script setup>
+import { useRouter } from 'vue-router';
+
 const props = defineProps({
     data: {
         type: Object,
@@ -6,10 +8,15 @@ const props = defineProps({
     }
 })
 const { data } = props
+
+const router = useRouter()
+const onClick = (data) => {
+    router.push({ name: 'detail', query: { code: data.alpha3Code } })
+}
 </script>
 
 <template>
-    <div class="country-flag-container">
+    <div class="country-flag-container" @click="onClick(data)">
         <div class="flag-img" :style="{ backgroundImage: `url(${data.flags.svg})` }"></div>
         <div class="country-desc">
             <p class="country-name">{{ data.name }}</p>

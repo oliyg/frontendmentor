@@ -25,6 +25,9 @@ export const useDbStore = defineStore('home', () => {
     })
     db.value = await res.json()
   }
+  const queryDataByCode = (code) => {
+    return db.value.find((itm) => itm.alpha3Code === code)
+  }
   const filteredDb = computed(() => {
     if (!kw.value && !selectedRegion.value) return db.value
     return db.value.filter((itm) => {
@@ -38,5 +41,15 @@ export const useDbStore = defineStore('home', () => {
     })
   })
 
-  return { db, filteredDb, regions, selectedRegion, setSelectedRegion, kw, setKw, queryAllData }
+  return {
+    db,
+    filteredDb,
+    regions,
+    selectedRegion,
+    setSelectedRegion,
+    kw,
+    setKw,
+    queryAllData,
+    queryDataByCode
+  }
 })

@@ -1,6 +1,6 @@
 <template>
     <div class="main-header-container">
-        <p class="title">Where in the world?</p>
+        <p class="title" @click="onClick">Where in the world?</p>
         <div class="theme-toggle">
             <img :src="toggleImg" alt="toggle theme" class="img">
             <span class="txt">Dark Mode</span>
@@ -10,6 +10,11 @@
 
 <script setup>
 import toggleImg from "@/assets/toggle.svg";
+import { useRouter } from "vue-router";
+const router = useRouter()
+const onClick = () => {
+    router.push({ name: 'home' })
+};
 </script>
 
 <style lang="scss">
@@ -30,6 +35,7 @@ import toggleImg from "@/assets/toggle.svg";
     .title {
         font-weight: 800;
         font-size: var(--font-size);
+        cursor: pointer;
     }
 
     .theme-toggle {
