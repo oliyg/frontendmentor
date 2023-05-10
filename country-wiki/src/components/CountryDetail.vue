@@ -66,7 +66,10 @@ const onClick = (itm) => {
 <style lang="scss">
 @media screen and (max-width: 1440px) {
     .country-detail-container {
+        margin-top: 64px;
+
         .flag {
+            margin: 0 auto;
             --width: 320px;
             --height: 229px;
             --border-radius: 5px;
