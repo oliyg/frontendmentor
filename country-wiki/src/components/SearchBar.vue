@@ -45,7 +45,7 @@ const onChange = () => {
     height: var(--height);
     width: var(--width);
     border-radius: var(--border-radius);
-    background-color: var(--color-background-color);
+    background-color: var(--color-background-soft);
     box-shadow: var(--box-shadow);
     padding: var(--padding);
 

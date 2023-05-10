@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import DetailView from '../views/DetailView.vue'
 import { useDbStore } from '@/stores/home'
 import { computed } from 'vue'
 
@@ -15,7 +14,7 @@ const router = createRouter({
     {
       path: '/detail',
       name: 'detail',
-      component: DetailView
+      component: import('../views/DetailView.vue')
     }
   ]
 })

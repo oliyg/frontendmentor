@@ -2,6 +2,10 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useDbStore = defineStore('home', () => {
+  /* ---------------------------------- theme --------------------------------- */
+  const theme = ref('light')
+  const setTheme = (val) => (theme.value = val)
+
   /* --------------------------------- search --------------------------------- */
   const kw = ref('')
   const setKw = (val) => (kw.value = val)
@@ -50,6 +54,8 @@ export const useDbStore = defineStore('home', () => {
     kw,
     setKw,
     queryAllData,
-    queryDataByCode
+    queryDataByCode,
+    theme,
+    setTheme
   }
 })

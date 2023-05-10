@@ -1,19 +1,14 @@
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
+    --color-background: #202c36;
+    --color-background-soft: #2b3844;
+    --color-font: #fff;
   }
-} */
+}
 
 :root {
-  --color-background: #fff;
+  --color-background: #f2f2f2;
+  --color-background-soft: #fff;
   --color-font: #111517;
 }
 
@@ -55,4 +50,5 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--color-background);
 }

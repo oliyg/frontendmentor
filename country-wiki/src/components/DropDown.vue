@@ -40,7 +40,7 @@ const onSelect = (itm) => {
 
 <template>
     <div class="dropdown-container">
-        <input type="text" class="txt" v-model="kw" @click="onShowList" />
+        <input type="text" class="txt" v-model="kw" @click="onShowList" placeholder="Filter by Region" />
         <img :src="arrowImg" alt="arrow icon" :class="{ icon: true, active: showList }" @click="onToggleShowList">
 
         <div class="dropdown-list" v-if="showList">
@@ -86,7 +86,7 @@ const onSelect = (itm) => {
     height: var(--height);
     padding: var(--padding);
 
-    background: var(--color-background);
+    background: var(--color-background-soft);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
 
@@ -121,7 +121,7 @@ const onSelect = (itm) => {
         overflow: hidden;
         overflow-y: auto;
 
-        background: var(--color-background);
+        background: var(--color-background-soft);
         box-shadow: var(--box-shadow);
         border-radius: var(--border-radius);
         z-index: 2;

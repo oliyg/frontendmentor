@@ -1,5 +1,6 @@
 <script setup>
 import GoBackBtn from '@/components/GoBackBtn.vue';
+import PageContainer from '@/components/PageContainer.vue';
 import { useRoute } from 'vue-router';
 import { useDbStore } from '@/stores/home';
 import { watch, computed, ref } from 'vue';
@@ -21,6 +22,8 @@ watch(code, query, { immediate: true })
 </script>
 
 <template>
-    <GoBackBtn />
-    <CountryDetail :country="detail" />
+    <PageContainer bg>
+        <GoBackBtn />
+        <CountryDetail :country="detail" />
+    </PageContainer>
 </template>

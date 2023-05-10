@@ -28,9 +28,10 @@ const onClick = () => {
     justify-content: space-between;
     align-items: center;
     padding: 30px 16px;
-
+    background: var(--color-background-soft);
     box-shadow: var(--box-shadow);
     font-size: 0;
+    z-index: 1;
 
     .title {
         font-weight: 800;
