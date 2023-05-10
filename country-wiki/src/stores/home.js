@@ -3,9 +3,15 @@ import { defineStore } from 'pinia'
 
 export const useDbStore = defineStore('home', () => {
   /* ---------------------------------- theme --------------------------------- */
-  const theme = ref('light')
-  const setTheme = (val) => (theme.value = val)
-  const toggleTheme = () => (theme.value = !theme.value)
+  const lightTheme = ref(true)
+  if (localStorage.getItem('theme')) {
+    lightTheme.value = localStorage.getItem('theme') === 'light'
+  }
+  const toggleTheme = () => {
+    lightTheme.value = !lightTheme.value
+    localStorage.setItem('theme', lightTheme.value ? 'light' : 'dark')
+    document.documentElement.setAttribute('theme', lightTheme.value ? 'light' : 'dark')
+  }
 
   /* --------------------------------- search --------------------------------- */
   const kw = ref('')
@@ -56,8 +62,6 @@ export const useDbStore = defineStore('home', () => {
     setKw,
     queryAllData,
     queryDataByCode,
-    theme,
-    setTheme,
     toggleTheme
   }
 })

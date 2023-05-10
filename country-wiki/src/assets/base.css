@@ -1,17 +1,13 @@
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #202c36;
-    --color-background-soft: #2b3844;
-    --color-font: #fff;
-  }
+:root[theme='dark'] {
+  --color-background: #202c36;
+  --color-background-soft: #2b3844;
+  --color-font: #fff;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-background: #f2f2f2;
-    --color-background-soft: #fff;
-    --color-font: #111517;
-  }
+:root {
+  --color-background: #f2f2f2;
+  --color-background-soft: #fff;
+  --color-font: #111517;
 }
 
 @media screen and (max-width: 1440px) {
