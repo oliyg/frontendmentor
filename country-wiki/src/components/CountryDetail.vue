@@ -113,7 +113,6 @@ const onClick = (itm) => {
                     row-gap: 10px;
 
                     .btn {
-                        --background: #FFFFFF;
                         --box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
                         --border-radius: 2px;
                         --height: 28px;
@@ -177,7 +176,6 @@ const onClick = (itm) => {
 
                 .btns {
                     .btn {
-                        --background: #FFFFFF;
                         --box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
                         font-size: 14px;
                         --border-radius: 2px;
@@ -236,7 +234,7 @@ const onClick = (itm) => {
                 .btn {
                     display: inline-block;
                     text-align: center;
-                    background: var(--background);
+                    background: var(--color-background);
                     box-shadow: var(--box-shadow);
                     border-radius: var(--border-radius);
                     height: var(--height);

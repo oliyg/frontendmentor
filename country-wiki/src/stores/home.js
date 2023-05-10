@@ -5,6 +5,7 @@ export const useDbStore = defineStore('home', () => {
   /* ---------------------------------- theme --------------------------------- */
   const theme = ref('light')
   const setTheme = (val) => (theme.value = val)
+  const toggleTheme = () => (theme.value = !theme.value)
 
   /* --------------------------------- search --------------------------------- */
   const kw = ref('')
@@ -56,6 +57,7 @@ export const useDbStore = defineStore('home', () => {
     queryAllData,
     queryDataByCode,
     theme,
-    setTheme
+    setTheme,
+    toggleTheme
   }
 })

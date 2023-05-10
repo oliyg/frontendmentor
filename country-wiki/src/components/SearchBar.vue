@@ -59,10 +59,8 @@ const onChange = () => {
         font-size: var(--font-size);
         line-height: 20px;
         width: 100%;
-
-        &::placeholder {
-            color: #C4C4C4;
-        }
+        background: var(--color-background-soft);
+        color: var(--color-font);
     }
 }
 </style>

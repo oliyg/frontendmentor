@@ -1,7 +1,7 @@
 <template>
     <div class="main-header-container">
         <p class="title" @click="onClick">Where in the world?</p>
-        <div class="theme-toggle">
+        <div class="theme-toggle" @click="onToggleTheme">
             <img :src="toggleImg" alt="toggle theme" class="img">
             <span class="txt">Dark Mode</span>
         </div>
@@ -10,11 +10,16 @@
 
 <script setup>
 import toggleImg from "@/assets/toggle.svg";
+import { useDbStore } from "@/stores/home";
 import { useRouter } from "vue-router";
 const router = useRouter()
 const onClick = () => {
     router.push({ name: 'home' })
 };
+const dbStore = useDbStore()
+const onToggleTheme = () => {
+    dbStore.toggleTheme()
+}
 </script>
 
 <style lang="scss">
@@ -36,10 +41,11 @@ const onClick = () => {
     .title {
         font-weight: 800;
         font-size: var(--font-size);
-        cursor: pointer;
     }
 
     .theme-toggle {
+        cursor: pointer;
+
         .img {
             font-weight: 400;
             display: inline-block;
@@ -55,6 +61,7 @@ const onClick = () => {
             font-size: 12px;
 
             color: #111517;
+            cursor: pointer;
         }
 
     }

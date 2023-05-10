@@ -94,7 +94,7 @@ const onSelect = (itm) => {
         width: 100%;
         height: 100%;
         font-size: var(--font-size);
-
+        background: var(--color-background-soft);
         color: var(--color-font);
     }
 
