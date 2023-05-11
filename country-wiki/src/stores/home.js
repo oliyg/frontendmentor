@@ -31,7 +31,7 @@ export const useDbStore = defineStore('home', () => {
   /* ----------------------------------- db ----------------------------------- */
   const db = ref([])
   const queryAllData = async () => {
-    const res = await fetch('http://localhost:5173/data.json', {
+    const res = await fetch('./data.json', {
       method: 'get'
     })
     db.value = await res.json()
