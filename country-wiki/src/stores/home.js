@@ -1,5 +1,6 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
+import { readableNumber } from '@/utils/number'
 
 export const useDbStore = defineStore('home', () => {
   /* ---------------------------------- theme --------------------------------- */
@@ -34,7 +35,11 @@ export const useDbStore = defineStore('home', () => {
     const res = await fetch('./data.json', {
       method: 'get'
     })
-    db.value = await res.json()
+    const data = await res.json()
+    db.value = data.map((itm) => {
+      itm.population = readableNumber(itm.population)
+      return itm
+    })
   }
   const queryDataByCode = (code) => {
     return db.value.find((itm) => itm.alpha3Code === code)
