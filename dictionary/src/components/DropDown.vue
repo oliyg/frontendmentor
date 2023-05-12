@@ -1,14 +1,42 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import IconArrowVue from './icons/IconArrow.vue';
+import { ref } from "vue";
+import IconArrowVue from "./icons/IconArrow.vue";
 
-const title = ref('Sans Serif');
+const options = ["Sans Serif", "Serif", "Mono"];
+
+const selected = ref("Sans Serif");
+const select = (val: string) => {
+  selected.value = val;
+  toggle();
+};
+
+const show = ref(false);
+const toggle = () => {
+  show.value = !show.value;
+};
 </script>
 
 <template>
-    <div class="flex items-center">
-        <span class="block text-sm font-bold mr-4 tablet:text-base tablet:mr-[1.125rem] desktop:mr-[1.125rem]">{{ title
-        }}</span>
-        <IconArrowVue class="block w-3" />
+  <div class="relative flex items-center">
+    <span
+      class="mr-4 block cursor-pointer text-sm font-bold tablet:mr-[1.125rem] tablet:text-base desktop:mr-[1.125rem]"
+      @click="toggle"
+      >{{ selected }}</span
+    >
+    <IconArrowVue @click="toggle" class="block w-3 cursor-pointer" />
+
+    <div
+      class="absolute right-0 top-10 w-[11.4375rem] rounded-2xl bg-white p-6 shadow-xl"
+      v-if="show"
+    >
+      <p
+        class="mb-4 cursor-pointer last:mb-0"
+        v-for="item in options"
+        :key="item"
+        @click="select(item)"
+      >
+        {{ item }}
+      </p>
     </div>
+  </div>
 </template>

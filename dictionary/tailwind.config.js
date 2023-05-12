@@ -10,6 +10,9 @@ module.exports = {
       desktop: "1440px",
     },
     extend: {
+      boxShadow: {
+        xl: "0px 5px 30px rgba(0, 0, 0, 0.1)",
+      },
       colors: {
         black: "#050505",
         white: "#FFFFFF",
