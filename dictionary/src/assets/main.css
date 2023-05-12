@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "lora";
+  src: url("./fonts/lora/Lora-VariableFont_wght.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "inter";
+  src: url("./fonts/inter/Inter-VariableFont_slnt,wght.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "inconsolata";
+  src: url("./fonts/inconsolata/Inconsolata-VariableFont_wdth,wght.ttf")
+    format("truetype"); /* Safari, Android, iOS */
+}

@@ -1,11 +1,10 @@
-/** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      mobile: "375px",
       tablet: "768px",
       laptop: "1024px",
       desktop: "1440px",
@@ -27,8 +26,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ["inter", ...defaultTheme.fontFamily.sans],
-        serif: ["lora", ...defaultTheme.fontFamily.sans],
-        mono: ["inconsolata", ...defaultTheme.fontFamily.sans],
+        serif: ["lora", ...defaultTheme.fontFamily.serif],
+        mono: ["inconsolata", ...defaultTheme.fontFamily.mono],
       },
     },
     fontSize: {
