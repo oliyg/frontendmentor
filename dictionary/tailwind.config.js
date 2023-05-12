@@ -2,6 +2,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     screens: {
@@ -12,6 +13,7 @@ module.exports = {
     extend: {
       boxShadow: {
         xl: "0px 5px 30px rgba(0, 0, 0, 0.1)",
+        darkXl: "0px 5px 30px #A445ED;",
       },
       colors: {
         black: "#050505",

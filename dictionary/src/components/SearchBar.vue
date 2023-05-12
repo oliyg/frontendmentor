@@ -25,7 +25,7 @@ watch(txt, verify);
 <template>
   <div>
     <div
-      class="flex h-12 w-full content-between rounded-2xl bg-gray-100 px-6 py-[.875rem] tablet:h-16 tablet:py-5"
+      class="flex h-12 w-full content-between rounded-2xl bg-gray-100 px-6 py-[.875rem] dark:border-purple dark:bg-gray-600 dark:text-white tablet:h-16 tablet:py-5"
       :class="{
         'border border-red': !valid,
         'border border-transparent ': valid,

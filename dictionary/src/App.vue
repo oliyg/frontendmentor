@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import { RouterView } from "vue-router";
 </script>
 
 <template>
   <div
-    class="desktop:w-6/12 desktop:p-[3.625rem] tablet:w-full mobile:w-full tablet:px-[2.4375rem] tablet:py-[3.625rem] p-[1.5rem] mx-auto">
+    class="mobile:w-full mx-auto p-[1.5rem] dark:bg-black tablet:w-full tablet:px-[2.4375rem] tablet:py-[3.625rem] desktop:w-6/12 desktop:p-[3.625rem]"
+  >
     <RouterView />
   </div>
 </template>
