@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import MainHeader from '@/components/MainHeader.vue';
+// import NoDefinitionVue from '@/components/NoDefinition.vue';
 import SearchBar from '@/components/SearchBar.vue';
 import WordDesc from '@/components/WordDesc.vue';
 import WordDisplayVue from '@/components/WordDisplay.vue';
@@ -20,6 +21,7 @@ const url = "https://en.wiktionary.org/wiki/keyboard"
 
 <template>
   <MainHeader />
+  <!-- <NoDefinitionVue class="mt-[8.25rem]" /> -->
   <SearchBar class="my-6 desktop:mt-[3.21875rem] desktop:mb-[2.8125rem]" />
   <WordDisplayVue />
   <WordDesc title="noun" :desc="desc1" :links="links" class="mt-8 tablet:mt-[2.6875rem] desktop:mt-[2.5rem]" />
