@@ -1,29 +1,45 @@
 <script setup lang="ts">
-import MainHeader from '@/components/MainHeader.vue';
-// import NoDefinitionVue from '@/components/NoDefinition.vue';
-import SearchBar from '@/components/SearchBar.vue';
-import WordDesc from '@/components/WordDesc.vue';
-import WordDisplayVue from '@/components/WordDisplay.vue';
+import ExternalLink from "@/components/ExternalLink.vue";
+import MainHeader from "@/components/MainHeader.vue";
+import NoDefinitionVue from "@/components/NoDefinition.vue";
+import SearchBar from "@/components/SearchBar.vue";
+import WordDesc from "@/components/WordDesc.vue";
+import WordDisplayVue from "@/components/WordDisplay.vue";
+import { useHomeStore } from "@/stores/home";
+import { computed } from "vue";
+const homeStore = useHomeStore();
 
-const desc1 = [{ means: "(etc.) A set of keys used to operate a typewriter, computer etc.", example: "" },
-{ means: "A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.", example: "" },
-{ means: "A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard device.", example: "" }
-]
+const onSearch = (word: string) => homeStore.query(word);
 
-const desc2 = [
-  { means: "To type on a computer keyboard.", example: '“Keyboarding is the part of this job I hate the most.”' }
-]
+const result = computed(() => homeStore.result);
+const hasErr = computed(() => homeStore.hasErr);
+const data = computed(() => result.value[0] ?? {});
 
-const links = ["electronic", "keyboard"]
-const url = "https://en.wiktionary.org/wiki/keyboard"
+const meanings = computed(() => data.value?.meanings ?? []);
 
+const licence = computed(() => data.value?.license ?? {});
 </script>
 
 <template>
   <MainHeader />
-  <!-- <NoDefinitionVue class="mt-[8.25rem]" /> -->
-  <SearchBar class="my-6 desktop:mt-[3.21875rem] desktop:mb-[2.8125rem]" />
-  <WordDisplayVue />
-  <WordDesc title="noun" :desc="desc1" :links="links" class="mt-8 tablet:mt-[2.6875rem] desktop:mt-[2.5rem]" />
-  <WordDesc title="verb" :desc="desc2" class="mt-8 tablet:mt-[2.6875rem]" :url="url" />
+  <SearchBar
+    class="my-6 desktop:mb-[2.8125rem] desktop:mt-[3.21875rem]"
+    @search="onSearch"
+  />
+
+  <template v-if="result.length">
+    <WordDisplayVue />
+    <WordDesc
+      v-for="(item, index) in meanings"
+      :key="index"
+      :part-of-speech="item.partOfSpeech"
+      :definitions="item.definitions"
+      :synonyms="item.synonyms"
+      :antonyms="item.antonyms"
+      class="mt-8 tablet:mt-[2.6875rem] desktop:mt-[2.5rem]"
+    />
+    <ExternalLink :name="licence.name" :url="licence.url" />
+  </template>
+
+  <NoDefinitionVue v-if="hasErr" class="mt-[8.25rem]" />
 </template>
