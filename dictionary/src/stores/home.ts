@@ -88,7 +88,13 @@ export const useHomeStore = defineStore("home", () => {
     }
   };
 
-  return { query, result, err, hasErr };
+  const fontType = ref(["Serif", "Sans Serif", "Mono"]);
+  const selectedFont = ref("Serif");
+  const selectFont = (val: string) => {
+    selectedFont.value = val;
+  };
+
+  return { query, result, err, hasErr, fontType, selectedFont, selectFont };
 });
 
 // To parse this data:

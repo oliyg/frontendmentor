@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import IconArrowVue from "./icons/IconArrow.vue";
+import { useHomeStore } from "@/stores/home";
 
-const options = ["Sans Serif", "Serif", "Mono"];
-
-const selected = ref("Sans Serif");
+const homeStore = useHomeStore();
+const options = computed(() => homeStore.fontType);
+const selected = computed(() => homeStore.selectedFont);
 const select = (val: string) => {
-  selected.value = val;
+  homeStore.selectFont(val);
   toggle();
 };
 
@@ -30,7 +31,12 @@ const toggle = () => {
       v-if="show"
     >
       <p
-        class="mb-4 cursor-pointer last:mb-0 dark:text-white"
+        class="mb-4 cursor-pointer font-bold last:mb-0 hover:text-purple dark:text-white"
+        :class="{
+          'font-sans': item === 'Sans Serif',
+          'font-serif': item === 'Serif',
+          'font-mono': item === 'Mono',
+        }"
         v-for="item in options"
         :key="item"
         @click="select(item)"
