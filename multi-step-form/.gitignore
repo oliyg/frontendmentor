@@ -15,4 +15,6 @@
 .DS_Store
 .prettierignore
 *:Zone.Identifier
+node_modules
+.DS_Store
 ```
