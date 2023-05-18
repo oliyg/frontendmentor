@@ -1,14 +1,12 @@
-import { useState } from 'react'
-import './App.css'
+import "./App.css";
+import Nav from "./Nav";
 
 function App() {
-  const curStep = useState(1)
-
   return (
     <>
-      <h1>Step {curStep}</h1>
+      <Nav />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
