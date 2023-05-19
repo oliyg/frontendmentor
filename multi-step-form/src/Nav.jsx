@@ -1,7 +1,7 @@
 function Nav() {
   return (
     <>
-      <div className="w-screen h-[10.75rem] bg-nav-bg bg-no-repeat bg-center bg-cover desktop:w-[17.13rem] desktop:h-full desktop:min-h-[35.5rem] desktop:rounded-[0.63rem] desktop:bg-desktop-nav-bg desktop:bg-bottom desktop:bg-contain desktop:bg-blue-300 flex mx-auto justify-center desktop:flex-col desktop:justify-start desktop:pt-10">
+      <div className="w-screen h-[10.75rem] bg-nav-bg bg-no-repeat bg-center bg-cover desktop:w-[17.13rem] desktop:h-full desktop:min-h-[35.5rem] desktop:rounded-[0.63rem] desktop:bg-desktop-nav-bg desktop:bg-bottom desktop:bg-contain desktop:bg-blue-300 flex mx-auto justify-center desktop:flex-col desktop:justify-start desktop:pt-10 desktop:shrink-0">
         {[
           { step: 1, desc: "YOUR INFO" },
           { step: 2, desc: "SELECT PLAN" },
