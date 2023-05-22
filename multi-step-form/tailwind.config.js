@@ -34,6 +34,9 @@ export default {
         "nav-bg": "url('/images/nav-bg.svg')",
         "desktop-nav-bg": "url('/images/desktop-nav-bg.svg')",
       },
+      boxShadow: {
+        base: "0px 25px 40px -20px rgba(0, 0, 0, 0.0951141);",
+      },
     },
   },
   plugins: [],

@@ -2,6 +2,10 @@ import { useState } from "react";
 import CheckBox from "./CheckBox";
 
 function OptionSelector({ options, onChange }) {
+  console.log(
+    "🚀 ~ file: OptionSelector.jsx:5 ~ OptionSelector ~ options:",
+    options
+  );
   const [selected, setSelected] = useState(null);
 
   const onClick = (itm) => {
@@ -18,7 +22,7 @@ function OptionSelector({ options, onChange }) {
             selected && itm.id === selected?.id
               ? "border-[#483EFF] bg-[#F8F9FF]"
               : ""
-          } mb-3 last:mb-0 flex items-center`}
+          } mb-3 last:mb-0 flex items-center relative`}
           onClick={() => onClick(itm)}
           key={itm.id}
         >
@@ -34,6 +38,13 @@ function OptionSelector({ options, onChange }) {
             <p className="text-sm font-bold text-blue-400">{itm.name}</p>
             <p className="text-[0.75rem] leading-5 text-gray-500">{itm.desc}</p>
           </div>
+          {itm.extraText ? (
+            <p className="absolute right-6 text-blue-300 text-sm leading-5">
+              {itm.extraText}
+            </p>
+          ) : (
+            <></>
+          )}
         </div>
       ))}
     </div>
